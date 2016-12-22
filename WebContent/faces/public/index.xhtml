@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+<h:head>
+	<title>Photonic Gates Designer</title>
+	<h:outputStylesheet library="css" name="index.css" />
+</h:head>
+<h:body>
+	<div id="wrap">
+		<div id="topbar">
+			<h1 id="sitename">
+				<a href="#">  Photonic Gates Designer</a>
+			</h1>
+			<div id="menus">
+				<ul id="topmenu">
+					<li><h:link outcome="pretty:login" value="Login"/></li>
+					<li><h:link outcome="pretty:sign-up" value="Sign-Up"/></li>
+				</ul>
+			</div>
+		</div>
+		<div id="header"></div>
+		<div id="content">
+			<div id="mainpage">
+				<h2>Photonic Gates Designer</h2>
+				
+				<p>Os <b>Cristais Fotônicos</b> são estruturas com baixa absorção de luz e índices de refração periódicos em uma, 
+					duas ou três dimensões. Essas estruturas podem ser criadas para controlar a luz e, em consequência disso, 
+					executar um cálculo computacional. As estruturas bidimensionais são utilizadas  para proporcionar um 
+					intervalo de banda completo, o que limita a direção e o comprimento de onda da propagação da luz. 
+					São gerados defeitos nas estruturas cristalinas, de forma que a luz seja guiada por um caminho. 
+					Através dessa cavidade, é possível controlar o fluxo da onda eletromagnética, criando lógica através da 
+					interferência construtiva e destrutiva de ondas.
+				</p>
+				 
+				<p>	O <b>Photonic Gates Designer</b> é um editor e simulador que auxilia a criação de Cristais Fotônicos. O sistema aqui apresentado
+					permite a edição de um arquivo CTL e a visualização dos elementos de um cristal, tudo através de uma interface WEB. O sistema utiliza o 
+					MEEP para executar as simulações. Além da edição, há uma funcionalidade que permite a Análise de Robustez de um circuito cristalino.    
+				</p>
+				<br></br>
+				<br></br>
+				<br></br>
+				<br></br>
+				<p> Para mais informações acesse: <a href="http://ab-initio.mit.edu/wiki/index.php/Meep_Reference">Referência Meep</a>
+				</p>
+			</div>
+			<div class="clear"></div>
+		</div>
+
+	</div>
+	<div id="footer">
+		<p>Disponibilizado pelo <a href="http://www2.dcc.ufmg.br/laboratorios/nanocomp/" id="lablink">Laboratório de Nanotecnologia Computacional e Nanocomputação da UFMG</a></p>
+	</div>
+</h:body>
+</html>

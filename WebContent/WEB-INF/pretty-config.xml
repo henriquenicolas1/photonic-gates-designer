@@ -1,0 +1,46 @@
+<pretty-config xmlns="http://ocpsoft.org/schema/rewrite-config-prettyfaces"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://ocpsoft.org/schema/rewrite-config-prettyfaces http://ocpsoft.org/xml/ns/prettyfaces/rewrite-config-prettyfaces.xsd">
+
+	<url-mapping id="index">
+		<pattern value="/" />
+		<view-id value="/faces/public/index.xhtml" />
+	</url-mapping>
+	
+	<url-mapping id="login">
+		<pattern value="/login" />
+		<view-id value="/faces/public/login.xhtml" />
+	</url-mapping>
+	
+	<url-mapping id="logout">
+		<pattern value="/logout" />
+		<view-id value="/faces/public/index.xhtml" />
+		<action>#{loginBean.logout}</action>
+	</url-mapping>
+	
+	<url-mapping id="crystals">
+		<pattern value="/crystals" />
+		<view-id value="/faces/restricted/crystals.xhtml" />
+	</url-mapping>
+	
+	<url-mapping id="analysis">
+		<pattern value="/analysis" />
+		<view-id value="/faces/restricted/analysis.xhtml" />
+	</url-mapping>
+	
+	<url-mapping id="editor">
+		<pattern value="/editor" />
+		<view-id value="/faces/restricted/editor.xhtml" />
+	</url-mapping>
+	
+	<url-mapping id="sign-up">
+		<pattern value="/sign-up" />
+		<view-id value="/faces/public/sign-up.xhtml" />
+	</url-mapping>
+	
+	<url-mapping id="meep-servers">
+		<pattern value="/meep-servers" />
+		<view-id value="/faces/restricted/meep-servers.xhtml" />
+	</url-mapping>
+	
+</pretty-config>

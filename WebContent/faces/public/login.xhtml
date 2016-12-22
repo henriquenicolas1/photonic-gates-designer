@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+<h:head>
+	<h:outputStylesheet library="css" name="login.css" />
+</h:head>
+<h:body>
+	<h:form id="loginForm">
+		<h2>Photonic Gates Designer</h2>
+		<p:messages id="messages" globalOnly="true" />
+		<table>
+			<tbody>
+				<tr>
+					<td><p:outputLabel for="email"
+							value="#{messages['login.email']}" /></td>
+					<td><p:inputText id="email" required="true"
+							requiredMessage="#{messages['login.required']}"
+							value="#{loginBean.email}" /></td>
+					<td>
+					<p:message for="email" />
+					</td>
+				</tr>
+				<tr>
+					<td><p:outputLabel for="password"
+							value="#{messages['login.password']}" /></td>
+					<td><p:password id="password" required="true"
+							requiredMessage="#{messages['login.required']}"
+							value="#{loginBean.password}" /></td>
+					<td>
+					<p:message for="password" />
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div style="padding-top: 1em">
+			<p:commandButton action="#{loginBean.login}" update="@form"
+				value="#{messages['login.login']}" />
+			<p:commandButton action="pretty:sign-up" immediate="true"
+				value="#{messages['login.signup']}" />
+		</div>
+	</h:form>
+</h:body>
+</html>

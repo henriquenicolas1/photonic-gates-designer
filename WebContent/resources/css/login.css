@@ -1,0 +1,27 @@
+html {
+	height: 100%;
+}
+
+body {
+	background-color: #D7DDEF;
+	display: flex;
+	align-items: center;
+	height: 100%;
+	justify-content: center;
+}
+
+#loginForm {
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
+}
+
+#loginForm div {
+	justify-content: flex-end;
+	display: flex;
+}
+
+#inputText{
+	background-color: #D7DDEF;
+	
+}

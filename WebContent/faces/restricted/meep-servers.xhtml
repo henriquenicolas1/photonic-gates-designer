@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	template="templates/model.xhtml">
+	<ui:define name="main">
+		<h:form id="meepServerForm">
+			<div
+				style="display: flex; justify-content: space-between; align-items: center;">
+				<h:panelGrid columns="2">
+					<h:panelGrid columns="3" cellpadding="5">
+						<p:outputLabel for="host" value="Host (IP): " />
+						<p:outputLabel for="port" value="Porta: " />
+						<p:outputLabel for="path" value="Caminho: " />
+						<p:inputText id="host" value="#{meepServerBean.server.host}" required="true" />
+						<p:inputNumber id="port" minValue="1" maxValue="65535" value="#{meepServerBean.server.port}" thousandSeparator="" decimalPlaces="0"/>
+						<p:inputText id="path" value="#{meepServerBean.server.path}" required="true"/>
+					</h:panelGrid>
+					<p:commandButton value="Adicionar servidor"
+						styleClass="ui-priority-primary" update=":message servers"
+						actionListener="#{meepServerBean.save}" />
+				</h:panelGrid>
+			</div>
+			<p:dataTable id="servers" var="s" value="#{meepServerBean.servers}">
+				<p:column headerText="Servidor">
+					<h:outputText value="#{s.id}" />
+				</p:column>
+
+				<p:column headerText="IP">
+					<h:outputText value="#{s.host}" />
+				</p:column>
+
+				<p:column headerText="Porta">
+					<h:outputText value="#{s.port}" />
+				</p:column>
+
+				<p:column headerText="Caminho">
+					<h:outputText value="#{s.path}" />
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>

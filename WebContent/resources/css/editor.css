@@ -1,0 +1,107 @@
+#cli-editor {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+#gui-editor {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	font-size: 0;
+	background-color: #272822;
+	overflow: auto;
+}
+
+#gui-editor>canvas {
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+}
+
+#gui-editor>canvas.opaque {
+	opacity: 1;
+}
+
+#simulation {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+#file-input {
+	display: none;
+}
+
+.block {
+	position: absolute;
+	background-color: white;
+	opacity: 0.1;
+}
+
+.flux-region {
+	position: absolute;
+	border-style: dotted;
+	border-width: 2px;
+	border-color: red;
+	background-color: pink;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.source {
+	position: absolute;
+	border-style: ridge;
+	border-width: 2px;
+	border-color: gold;
+	background-color: goldenrod;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.cylinder {
+	position: absolute;
+	border-color: white;
+	border-style: solid;
+	border-radius: 50%;
+	border-width: 2px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.cylinder.selected {
+	border-color: #f69c55;
+}
+
+#info {
+	display: flex;
+	flex-direction: column;
+	height: 30px;
+	font-size: 1em;
+	padding-left: 0.5em;
+}
+
+#info>pre {
+	margin: 0;
+}
+
+#info>pre.succ {
+	color: yellowgreen;
+}
+
+#info>pre.warn {
+	color: yellow;
+}
+
+#info>pre.error {
+	color: orange;
+}

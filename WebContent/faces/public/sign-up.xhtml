@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+<h:head>
+	<h:outputStylesheet library="css" name="signup.css" />
+</h:head>
+<h:body>
+	<h:form id="signUpForm">
+		<h1>PGD</h1>
+		<p:messages id="messages" globalOnly="true" />
+		<h:panelGrid columns="3" cellpadding="5">
+		
+			<p:outputLabel for="name" value="Nome: " />
+			<p:inputText id="name" value="#{signUpBean.user.name}"
+				required="true"
+				requiredMessage="Esse campo deve ser preenchido." />
+			<p:message for="name" />
+
+			<p:outputLabel for="email" value="E-mail: " />
+			<p:inputText id="email" value="#{signUpBean.user.email}"
+				required="true"
+				requiredMessage="Esse campo deve ser preenchido." />
+			<p:message for="email" />
+
+			<p:outputLabel for="feedback" value="Senha: " />
+			<p:password id="feedback" value="#{signUpBean.user.password}"
+				feedback="true" required="true" match="feedback2"
+				validatorMessage="As senhas não conferem"
+				requiredMessage="Esse campo deve ser preenchido." />
+			<p:message for="feedback" />
+
+			<p:outputLabel for="feedback2" value="Confirme a Senha: " />
+			<p:password id="feedback2" value="#{signUpBean.user.password}"
+				feedback="true" required="true"
+				requiredMessage="Esse campo deve ser preenchido." />
+			<p:message for="feedback2" />
+
+		</h:panelGrid>
+		<div style="padding-top: 1em">
+			<p:commandButton action="#{signUpBean.save}" value="Enviar" update="@form" />
+		</div>
+	</h:form>
+</h:body>
+</html>
